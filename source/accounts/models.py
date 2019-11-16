@@ -29,7 +29,7 @@ class Token(models.Model):
 
 class Url(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='accounts_url')
-    url = models.URLField(max_length=300, null=True, blank=True, verbose_name='Профиль GitHup')
+    url = models.URLField(max_length=300, null=True, blank=True, verbose_name='Ссылки на другие информыции о вас ')
     avatar = models.ImageField(null=True, blank=True, upload_to='user_pics', verbose_name='Аватар')
     description = models.TextField(max_length=3000, null=True, blank=True, verbose_name='описание')
 

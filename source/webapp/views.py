@@ -8,7 +8,7 @@ from webapp.models import Product, Review
 
 class IndexView(ListView):
     template_name = 'index.html'
-    context_object_name = 'product'
+    context_object_name = 'products'
     model = Product
     paginate_by = 4
     paginate_orphans = 1

@@ -119,12 +119,3 @@ class UrlForm(forms.ModelForm):
         model = Url
         fields = ['url', 'avatar', 'description']
 
-    def clean_url(self):
-        git = 'https://github.com/'
-        github = self.cleaned_data['url']
-        git_start = github.startswith(git)
-        print(git_start)
-        if git_start:
-            return github
-        else:
-            raise ValidationError('error')

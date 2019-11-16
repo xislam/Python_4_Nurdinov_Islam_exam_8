@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$oyUQVliMVo3C$jxIEN+7rdpITp2Em8I6RLnASLEbCaL0CKeKLKcxABaI=",
-    "last_login": null,
+    "last_login": "2019-11-16T10:43:47.808Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -13,6 +13,24 @@
     "is_staff": true,
     "is_active": true,
     "date_joined": "2019-11-15T14:45:23.270Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$6NaJBiofl6zr$Jc0SBvmW9kVEc4Dsqm5Tz1naaNU3dbVTb/lFe7jSvgc=",
+    "last_login": "2019-11-16T11:39:23.770Z",
+    "is_superuser": false,
+    "username": "isoo",
+    "first_name": "",
+    "last_name": "",
+    "email": "tes224t@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2019-11-16T10:46:31.492Z",
     "groups": [],
     "user_permissions": []
   }
