@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.urls import reverse
-from django.views.generic import DetailView, UpdateView, ListView
+from django.views.generic import DetailView, UpdateView
 
 from accounts.models import Token
 from accounts.forms import SignUpForm, PasswordChangeForm, UserForm, UrlForm, UserChangeForm
@@ -97,14 +97,6 @@ class UserPasswordChangeView(UpdateView):
             return HttpResponseForbidden()
 
         return super().dispatch(request, *args, **kwargs)
-
-
-class UserView(ListView):
-    template_name = 'user_data.html'
-    context_object_name = 'user_list'
-    model = User
-    paginate_by = 4
-    paginate_orphans = 1
 
 
 @transaction.atomic

@@ -20,7 +20,7 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
 
     def get_success_url(self):
-        return reverse('webapp:index.html')
+        return reverse('webapp:index')
 
 
 class ProductView(DetailView):

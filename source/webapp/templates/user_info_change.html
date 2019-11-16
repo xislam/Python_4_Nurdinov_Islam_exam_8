@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Личный кабинет{% endblock %}
+{% block menu_links %}
+    <li><a href="{% url "accounts:detail" user_obj.pk %}">Назад</a></li>
+    <li><a href="#">Смена пароля</a></li>
+{% endblock %}
+{% block content %}
+    <h1> Редоктирование Личный кабинет</h1>
+
+    <form action="{% url "accounts:update" user_obj.pk %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+{% endblock %}
