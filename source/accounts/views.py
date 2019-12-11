@@ -107,6 +107,7 @@ class UserView(ListView):
     paginate_orphans = 1
 
 
+
 @transaction.atomic
 def update_profile(request, pk):
     if request.method == 'GET':
@@ -125,3 +126,4 @@ def update_profile(request, pk):
             user_form.save()
             profile_form.save()
             return redirect('webapp:index')
+

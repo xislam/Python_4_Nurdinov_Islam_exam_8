@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <a class="navbar-brand" href="{% url 'webapp:product_add'%}">Add product</a>
+     <a class="navbar-brand" href="{% url 'webapp:review_add'%}">Add Review</a>
+
+{% endblock %}
+{% block content %}
+<h1>Продукты:</h1>
+<hr/>
+    {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+{% for product in products %}
+<div class="card">
+    <div class="card-body">
+    <p style="display:inline "><a href="{% url 'webapp:product_detail' product.pk %}"><i class="fas fa-book-open"></i></a></p>
+    {% if user.is_authenticated %}
+        <p style="display:inline "><a href="{% url 'webapp:update' product.pk %}"><i class="fas fa-file-signature"></i></a></p>
+        <p style="display:inline "><a href="{% url 'webapp:delete' product.pk %}"><i class="fas fa-trash"></i></a></p>
+    {%endif%}
+        <p class="card-text">Имя : {{ product.name }}
+        <p class="card-text">Описание : {{ product.description }}</p>
+        <p class="card-text">Ктигория: {{ product.category }}</p>
+    </div>
+</div>
+<h2></h2>
+<hr/>
+{% endfor %}
+      {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+{% endblock %}
